@@ -1,0 +1,90 @@
+#landing {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1)),
+        bottom / cover fixed no-repeat url(../../images/landing.jpg);
+}
+// .welcome {
+//     display: flex;
+//     flex-direction: column;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     justify-content: center;
+//     text-align: center;
+//     border: none;
+//     p {
+//         display: none;
+//     }
+// }
+
+// .pro-pic {
+//     margin: auto;
+//     border-radius: 50%;
+//     width: 95%;
+//     height: 50%;
+//     background: right / cover no-repeat url(../../images/profile1.jpg);
+//     border: 1px solid $accent;
+// }
+
+@media #{$brk-med} {
+    #landing {
+        flex-direction: row;
+    }
+
+    .welcome {
+        max-width: 40%;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        margin-bottom: 15px;
+        position: relative;
+        left: 50px;
+
+        p {
+            display: block;
+        }
+    }
+
+    .pro-pic {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        left: 50px;
+    }
+}
+
+@media #{$brk-lrg} {
+    .welcome {
+        padding: 15px;
+        top: 30px;
+        left: 100px;
+        p {
+            display: block;
+        }
+    }
+
+    .pro-pic {
+        margin: 0 40% 0 0;
+        top: 30vh;
+        left: 35vw;
+    }
+}
+
+@media #{$brk-xl} {
+    .welcome {
+        padding: 20px;
+        top: 30px;
+        left: 300px;
+    }
+}
+
+@media #{$brk-xxl} {
+    .pro-pic {
+        height: 400px;
+        width: 400px;
+        top: 30vh;
+        left: 55vw;
+    }
+}
