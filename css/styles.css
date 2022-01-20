@@ -382,7 +382,12 @@ a {
   color: aliceblue;
 }
 
-/* line 14, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+/* line 13, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+h2 {
+  font-size: 2rem;
+}
+
+/* line 16, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
 h2,
 h3 {
   color: #ffd595;
@@ -414,7 +419,7 @@ nav {
 /* line 17, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .name {
   font-family: "Tangerine", cursive, sans-serif;
-  font-size: 3rem;
+  font-size: 3.1rem;
   margin: 3px auto 4px;
   text-shadow: 5px 5px 10px #000000;
 }
@@ -618,34 +623,43 @@ nav {
   transition: all 2s ease-in-out;
 }
 
-/* line 24, ../../GitHub/My-Portfolio/scss/components/_about.scss */
-.view {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-/* line 29, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 25, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .info {
-  background-color: #272d2f;
+  background-color: #151515;
   padding: 30px;
   width: 95%;
+  margin-bottom: 5vh;
+  text-align: center;
 }
 
-/* line 34, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 33, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+.slider {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 3s ease-in-out;
+}
+
+/* line 38, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+.view {
+  opacity: 1;
+  transform: translate(0px);
+}
+
+/* line 42, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .pc-img {
   width: 95%;
 }
 
 @media (min-width: 768px) {
-  /* line 39, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 47, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .row {
     flex-direction: row;
   }
-  /* line 42, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 50, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .info {
     width: 50%;
   }
-  /* line 45, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 53, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .pc-img {
     width: 30%;
     background-color: aliceblue;

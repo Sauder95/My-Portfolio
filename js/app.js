@@ -4,11 +4,12 @@ const text = myName.textContent;
 const array = text.split("");
 myName.textContent = "";
 // ############ ABOUT SECTION VARS ################################//
-const aboutTitle = document.querySelector(".about-title");
+const aboutTitle = document.querySelectorAll(".about-title");
+const slider = document.querySelectorAll(".slider");
 const options = {
   root: null,
-  threshold: 0,
-  // rootMargin: "-150px",
+  threshold: 0.3,
+  rootMargin: "0px",
 };
 
 // ############ TITLE FADE IN ################################//
@@ -38,14 +39,22 @@ function complete() {
 
 // ############ TITLE FADE IN ################################//
 
-const observer = new IntersectionObserver(function (entries, observer) {
-  entries.forEach((entry) => {
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach(entry => {
     if (!entry.isIntersecting) {
       return;
+    } else {
     }
     console.log(entry.target);
     entry.target.classList.add("view");
+    observer.unobserve(entry.target);
   });
 }, options);
 
-observer.observe(aboutTitle);
+aboutTitle.forEach(title => {
+  observer.observe(title);
+});
+
+slider.forEach(slide => {
+  observer.observe(slide);
+});

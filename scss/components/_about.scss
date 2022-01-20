@@ -21,15 +21,23 @@
     transform: translateY(50px);
     transition: all 2s ease-in-out;
 }
-.view {
-    opacity: 1;
-    transform: translateY(0px);
-}
 
 .info {
     background-color: $secondary;
     padding: 30px;
     width: 95%;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.slider {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 3s ease-in-out;
+}
+.view {
+    opacity: 1;
+    transform: translate(0px);
 }
 .pc-img {
     width: 95%;
