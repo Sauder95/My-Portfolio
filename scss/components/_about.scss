@@ -1,6 +1,5 @@
 #about {
     height: 100vh;
-    padding: 50px 20px 0;
     h2 {
         text-align: center;
         margin-bottom: 20px;
@@ -15,6 +14,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    padding: 5px;
 }
 .about-title {
     opacity: 0;
@@ -22,37 +22,74 @@
     transition: all 2s ease-in-out;
 }
 
-.info {
-    background-color: $secondary;
-    padding: 30px;
-    width: 95%;
-    margin-bottom: 5vh;
+.card {
+    padding: 20px 10px 20px;
     text-align: center;
 }
+.info {
+    background-color: $secondary;
+    margin-bottom: 5vh;
 
-.slider {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 3s ease-in-out;
+    button {
+        background-color: transparent;
+        cursor: pointer;
+        max-width: 20%;
+        border: none;
+        color: $accent;
+    }
 }
+
+// .slider {
+//     opacity: 0;
+//     transform: translateX(-100px);
+//     transition: all 3s ease-in-out;
+// }
 .view {
     opacity: 1;
     transform: translate(0px);
 }
+
+.extendable {
+    background-color: green;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+// .extendable-show {
+//     animation: extendable 0.5s forwards;
+// }
+
 .pc-img {
     width: 95%;
 }
+// ============= ANIMATIONS ====================
+
+@keyframes extendable {
+    100% {
+    }
+}
+
+// ============= MEDIA QUERYS ================
 
 @media #{$brk-med} {
+    #about {
+        padding: 50px 20px 0;
+    }
+    .card {
+        padding: 50px;
+        text-align: left;
+    }
     .row {
         flex-direction: row;
     }
+
     .info {
         width: 50%;
     }
     .pc-img {
         width: 30%;
-        background-color: aliceblue;
+        // background-color: aliceblue;
     }
 }
 

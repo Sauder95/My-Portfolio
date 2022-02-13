@@ -45,7 +45,6 @@ const observer = new IntersectionObserver(function (entries) {
       return;
     } else {
     }
-    console.log(entry.target);
     entry.target.classList.add("view");
     observer.unobserve(entry.target);
   });
@@ -58,3 +57,19 @@ aboutTitle.forEach(title => {
 slider.forEach(slide => {
   observer.observe(slide);
 });
+
+// =============== EXTENDABLE ========================//
+
+const extendButtons = document.querySelector("#ext-btn");
+
+for (let i = 0; i < extendButtons.length; i++) {
+  extendButtons[i].onclick = function () {
+    let content = this.nextElementSibling;
+    console.log("hello");
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  };
+}
