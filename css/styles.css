@@ -374,7 +374,7 @@ template {
 /* ============================================= */
 /*              TYPOGRAPHY                    */
 /* ============================================= */
-/* line 7, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+/* line 6, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
 *,
 body,
 a {
@@ -382,12 +382,27 @@ a {
   color: aliceblue;
 }
 
-/* line 13, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+/* line 12, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+a,
+p,
+h2,
+h3,
+input,
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* line 20, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+.name {
+  font-family: "Tangerine", cursive, sans-serif;
+}
+
+/* line 24, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
 h2 {
   font-size: 2rem;
 }
 
-/* line 16, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
+/* line 27, ../../GitHub/My-Portfolio/scss/base/_typography.scss */
 h2,
 h3 {
   color: #ffd595;
@@ -423,25 +438,24 @@ nav {
 
 /* line 17, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .name {
-  font-family: "Tangerine", cursive, sans-serif;
   font-size: 3.1rem;
   margin: 3px auto 4px;
   text-shadow: 5px 5px 10px #000000;
 }
 
-/* line 23, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 22, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .name span {
   color: #ffd595;
   font-size: inherit;
   opacity: 0;
 }
 
-/* line 28, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 27, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .name span.show {
   opacity: 1;
 }
 
-/* line 33, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 32, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .navlist {
   display: flex;
   flex-direction: column;
@@ -452,12 +466,12 @@ nav {
   opacity: 1;
 }
 
-/* line 42, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 41, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .navlist li {
   padding: 5px;
 }
 
-/* line 44, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 43, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .navlist li a {
   font-size: 1.2rem;
   text-decoration: none;
@@ -465,7 +479,7 @@ nav {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 49, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+/* line 48, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
 .navlist li a:hover {
   color: #ffd595;
 }
@@ -493,30 +507,30 @@ nav {
 }
 
 @media (min-width: 768px) {
-  /* line 82, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+  /* line 81, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
   nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
   }
-  /* line 88, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+  /* line 87, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
   .navlist {
     animation: 3s ease-in-out normal show-2;
     flex-direction: row;
     margin: 0;
     transform: translateY(40px);
   }
-  /* line 93, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+  /* line 92, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
   .navlist a {
     padding: 0 5px;
   }
-  /* line 97, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+  /* line 96, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
   .name {
     margin: 0;
     font-size: 6rem;
     transform: translatex(-100px);
   }
-  /* line 101, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
+  /* line 100, ../../GitHub/My-Portfolio/scss/components/_nav.scss */
   .name span:first-child {
     font-size: 10rem;
   }
@@ -607,9 +621,24 @@ nav {
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* line 9, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 7, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+#about h2:hover {
+  animation: wobble 0.5s forwards;
+}
+
+@keyframes wobble {
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* line 22, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .row {
   margin: 0;
   display: flex;
@@ -621,50 +650,57 @@ nav {
   padding: 5px;
 }
 
-/* line 19, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 32, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .about-title {
   opacity: 0;
   transform: translateY(50px);
   transition: all 2s ease-in-out;
 }
 
-/* line 25, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 38, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .card {
   padding: 20px 10px 20px;
   text-align: center;
 }
 
-/* line 29, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 42, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .info {
   background-color: #151515;
   margin-bottom: 5vh;
 }
 
-/* line 33, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 46, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .info button {
   background-color: transparent;
   cursor: pointer;
-  max-width: 20%;
+  margin-bottom: 10px;
+  text-align: left;
   border: none;
   color: #ffd595;
 }
 
-/* line 47, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 56, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+.slider {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 3s ease-in-out;
+}
+
+/* line 61, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .view {
   opacity: 1;
   transform: translate(0px);
 }
 
-/* line 52, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 66, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .extendable {
-  background-color: green;
   width: 100%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s;
 }
 
-/* line 63, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+/* line 76, ../../GitHub/My-Portfolio/scss/components/_about.scss */
 .pc-img {
   width: 95%;
 }
@@ -675,24 +711,24 @@ nav {
 }
 
 @media (min-width: 768px) {
-  /* line 76, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 89, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   #about {
     padding: 50px 20px 0;
   }
-  /* line 79, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 92, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .card {
     padding: 50px;
     text-align: left;
   }
-  /* line 83, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 96, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .row {
     flex-direction: row;
   }
-  /* line 87, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 100, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .info {
     width: 50%;
   }
-  /* line 90, ../../GitHub/My-Portfolio/scss/components/_about.scss */
+  /* line 103, ../../GitHub/My-Portfolio/scss/components/_about.scss */
   .pc-img {
     width: 30%;
   }

@@ -60,12 +60,12 @@ slider.forEach(slide => {
 
 // =============== EXTENDABLE ========================//
 
-const extendButtons = document.querySelector("#ext-btn");
+const extendButtons = document.querySelectorAll(".ext-btn");
 
 for (let i = 0; i < extendButtons.length; i++) {
   extendButtons[i].onclick = function () {
     let content = this.nextElementSibling;
-    console.log("hello");
+
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {

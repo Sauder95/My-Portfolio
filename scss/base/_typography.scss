@@ -3,13 +3,24 @@
 /*              TYPOGRAPHY                    */
 
 /* ============================================= */
-
 *,
 body,
 a {
     font-size: 20px;
     color: aliceblue;
 }
+a,
+p,
+h2,
+h3,
+input,
+button {
+    font-family: "Quicksand", sans-serif;
+}
+.name {
+    font-family: "Tangerine", cursive, sans-serif;
+}
+
 h2 {
     font-size: 2rem;
 }
