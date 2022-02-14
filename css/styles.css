@@ -544,7 +544,7 @@ nav {
   padding: 20px;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(transparent, black), bottom/cover fixed no-repeat url(../../images/landing.jpg);
+  background: linear-gradient(transparent, black), bottom/cover fixed no-repeat url(../images/landing.jpg);
 }
 
 @media (min-width: 768px) {
