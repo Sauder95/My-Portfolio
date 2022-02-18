@@ -31,18 +31,15 @@
 }
 .about-title {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 2s ease-in-out;
+    transform: translate(0px, 100px);
+    transition: transform 5s ease-in-out;
 }
 
 .card {
     padding: 20px 10px 20px;
     text-align: center;
-}
-.info {
     background-color: $secondary;
     margin-bottom: 5vh;
-
     button {
         background-color: transparent;
         cursor: pointer;
@@ -52,15 +49,28 @@
         color: $accent;
     }
 }
+.info {
+    background-color: $secondary;
+    margin-bottom: 5vh;
+}
+
+.profile-picture {
+    border-radius: 5px;
+    border: solid $accent;
+    border-width: 0;
+    max-height: 0;
+    margin-bottom: 2rem;
+    transition: max-height 0.5s ease-in-out, border-width 1s ease-in-out;
+}
 
 .slider {
     opacity: 0;
-    transform: translateX(-100px);
-    transition: all 3s ease-in-out;
+    transform: translate(-100px);
+    transition: transform 4s ease-in-out, opacity 4s ease-in-out;
 }
 .view {
     opacity: 1;
-    transform: translate(0px);
+    transform: translate(0px, 0px);
 }
 
 .extendable {
@@ -69,9 +79,6 @@
     overflow: hidden;
     transition: max-height 0.5s;
 }
-// .extendable-show {
-//     animation: extendable 0.5s forwards;
-// }
 
 .pc-img {
     width: 95%;

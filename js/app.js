@@ -1,5 +1,5 @@
 // ############ TITLE VARS ################################//
-const myName = document.querySelector(".name");
+const myName = document.querySelector(".intro");
 const text = myName.textContent;
 const array = text.split("");
 myName.textContent = "";
@@ -15,7 +15,11 @@ const options = {
 // ############ TITLE FADE IN ################################//
 
 for (i = 0; i < array.length; i++) {
-  myName.innerHTML += "<span>" + array[i] + "</span>";
+  if (array[i].className !== "title-break") {
+    myName.innerHTML += "<span>" + array[i] + "</span>";
+  } else {
+    return;
+  }
 }
 
 let char = 0;
@@ -52,6 +56,11 @@ const observer = new IntersectionObserver(function (entries) {
 
 aboutTitle.forEach(title => {
   observer.observe(title);
+  if (aboutTitle) {
+    return;
+  } else {
+    aboutTitle.style.animation = " 6s ease-in-out normal show";
+  }
 });
 
 slider.forEach(slide => {
@@ -61,15 +70,24 @@ slider.forEach(slide => {
 // =============== EXTENDABLE ========================//
 
 const extendButtons = document.querySelectorAll(".ext-btn");
+const card = document.querySelector(".info");
 
 for (let i = 0; i < extendButtons.length; i++) {
   extendButtons[i].onclick = function () {
     let content = this.nextElementSibling;
-
+    let profilePic = document.querySelector(".profile-picture");
     if (content.style.maxHeight) {
+      this.textContent = "More ...";
       content.style.maxHeight = null;
+      profilePic.style.maxHeight = null;
+      profilePic.style.borderWidth = null;
+      profilePic.style.marginBottom = null;
     } else {
+      this.textContent = "Less ...";
       content.style.maxHeight = content.scrollHeight + "px";
+      profilePic.style.maxHeight = card.scrollHeight + "px";
+      profilePic.style.borderWidth = "2px";
+      profilePic.style.marginBottom = "2rem";
     }
   };
 }

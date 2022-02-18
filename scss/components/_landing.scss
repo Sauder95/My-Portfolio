@@ -1,24 +1,29 @@
 #landing {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 20px;
     height: 100vh;
-    margin: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1)),
-        bottom / cover fixed no-repeat url(../images/landing.jpg);
 }
-// .welcome {
-//     display: flex;
-//     flex-direction: column;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     justify-content: center;
-//     text-align: center;
-//     border: none;
-//     p {
-//         display: none;
-//     }
-// }
+.welcome {
+    display: flex;
+    text-align: left;
+}
+.intro {
+    font-size: 5rem;
+    line-height: 4.5rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 2px $accent;
+    animation: 3s ease-in-out normal show;
+    span {
+        font-size: inherit;
+        opacity: 0;
+    }
+    span.show {
+        opacity: 1;
+    }
+}
 
 // .pro-pic {
 //     margin: auto;
@@ -32,19 +37,13 @@
 @media #{$brk-med} {
     #landing {
         flex-direction: row;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .welcome {
         max-width: 40%;
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 5px;
-        margin-bottom: 15px;
-        position: relative;
-        left: 50px;
-
-        p {
-            display: block;
-        }
     }
 
     .pro-pic {
@@ -56,15 +55,6 @@
 }
 
 @media #{$brk-lrg} {
-    .welcome {
-        padding: 15px;
-        top: 30px;
-        left: 100px;
-        p {
-            display: block;
-        }
-    }
-
     .pro-pic {
         margin: 0 40% 0 0;
         top: 30vh;
@@ -73,11 +63,6 @@
 }
 
 @media #{$brk-xl} {
-    .welcome {
-        padding: 20px;
-        top: 30px;
-        left: 300px;
-    }
 }
 
 @media #{$brk-xxl} {

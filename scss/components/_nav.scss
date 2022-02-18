@@ -5,7 +5,7 @@ header {
     width: 100%;
 }
 
-nav {
+.main-nav {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -14,21 +14,12 @@ nav {
     text-align: center;
 }
 
-.name {
-    font-size: 3.1rem;
-    margin: 3px auto 4px;
-    text-shadow: 5px 5px 10px $primary;
-
-    span {
-        color: $accent;
-        font-size: inherit;
-        opacity: 0;
-    }
-    span.show {
-        opacity: 1;
-    }
+.logo {
+    max-width: 100%;
+    margin: 1rem auto;
+    // padding: 5px;
+    box-shadow: 0px 0px 5px $primary;
 }
-
 .navlist {
     display: flex;
     flex-direction: column;
@@ -40,6 +31,11 @@ nav {
 
     li {
         padding: 5px;
+        box-shadow: 0px 0px 5px $primary;
+        margin-bottom: 0.5rem;
+        &:hover {
+            background-color: $primary;
+        }
         a {
             font-size: 1.2rem;
             text-decoration: none;
@@ -67,40 +63,66 @@ nav {
 @keyframes show-2 {
     0% {
         opacity: 0;
-        transform: translateY(80px);
+        transform: translateY(180px);
     }
     100% {
         opacity: 1;
-        transform: translateY(40px);
+        transform: translateY(0px);
     }
 }
-
+@keyframes nav-border {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
+}
 // ========= MEDIA QUERIES ==========/
 
 @media #{$brk-med} {
-    nav {
+    .main-nav {
+        position: fixed;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+        position: fixed;
+        inset: 0;
+        max-width: 10vw;
+        min-height: 100vh;
+        background-color: $secondary;
+        animation: 2s ease-in-out normal show-2;
+        margin: 0;
+        // border-right: 1px solid $accent;
+    }
+
+    .main-nav::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        inset: 0% 100%;
+        background-color: $accent;
+        animation: 3s ease-in-out normal nav-border;
+    }
+
+    .logo {
+        margin: 5rem auto;
     }
 
     .navlist {
-        animation: 3s ease-in-out normal show-2;
-        flex-direction: row;
-        margin: 0;
-        transform: translateY(40px);
         a {
             padding: 0 5px;
         }
     }
-    .name {
-        margin: 0;
-        font-size: 6rem;
-        transform: translatex(-100px);
-        span:first-child {
-            font-size: 10rem;
-        }
-    }
+    // .name {
+    //     margin: 0;
+    //     font-size: 6rem;
+    //     transform: translatex(-100px);
+    //     span:first-child {
+    //         font-size: 10rem;
+    //     }
+    // }
 }
 
 @media #{$brk-lrg} {

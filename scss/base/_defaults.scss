@@ -5,3 +5,9 @@ body {
 .container-lg {
     padding: 0;
 }
+
+@media #{$brk-med} {
+    body {
+        margin-left: 10vw;
+    }
+}
